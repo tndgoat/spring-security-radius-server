@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Main-Class: com.asm2.spring_security_radius_server.SpringSecurityRadiusServerApplication
