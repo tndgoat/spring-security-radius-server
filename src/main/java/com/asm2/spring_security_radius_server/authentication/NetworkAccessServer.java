@@ -16,7 +16,7 @@ public class NetworkAccessServer {
 
     private static final String NAS_IP_ADDRESS = "NAS-IP-Address";
     private static final String NAS_PORT_ID = "NAS-Port-Id";
-    private RadiusClient radiusClient;
+    private final RadiusClient radiusClient;
 
     public NetworkAccessServer(RadiusServer radiusServer) {
     	this.radiusClient = initRadiusClient(radiusServer);
@@ -40,10 +40,8 @@ public class NetworkAccessServer {
 
         ar.addAttribute(NAS_PORT_ID, InetAddress.getLocalHost().getHostAddress());
 
-        ar.addAttribute(NAS_IP_ADDRESS, "172.25.0.101");
+        ar.addAttribute(NAS_IP_ADDRESS, "125.235.4.59");
 
-        RadiusPacket response = radiusClient.authenticate(ar);
-
-        return response;
+        return radiusClient.authenticate(ar);
     }
 }
